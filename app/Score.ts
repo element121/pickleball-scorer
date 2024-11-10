@@ -1,3 +1,4 @@
+/*
 let winScore = 11;
 let winGap = 2;
 
@@ -12,7 +13,7 @@ let servingTeam = 1;
 
 let startTime = "";
 let endTime = "";
-
+*/
 // Score.ts
 export class Score {
   winScore: number;
