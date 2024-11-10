@@ -11,6 +11,11 @@ export default function Home() {
     setScore(game.getScore());
   };
 
+  const handleResetPoint = () => {
+    game.resetPoint();
+    setScore(game.getScore());
+  };
+
   const handleSwitchServer = () => {
     game.switchServer();
     setScore(game.getScore());
@@ -27,7 +32,13 @@ export default function Home() {
           onClick={handleScorePoint}
           className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
         >
-          Score Point
+          Score point +
+        </button>
+        <button
+          onClick={handleResetPoint}
+          className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+        >
+          Undo point -
         </button>
         <button
           onClick={handleSwitchServer}
@@ -35,6 +46,11 @@ export default function Home() {
         >
           Switch Server
         </button>
+        <button className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44">
+          Reset Game - are you sure?
+        </button>
+
+        <p>Show final score... Player 1 won 11-0</p>
       </main>
     </div>
   );

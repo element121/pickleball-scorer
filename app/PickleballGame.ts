@@ -20,6 +20,16 @@ export class PickleballGame {
     this.checkWin();
   }
 
+  // Undo point / play a let
+  resetPoint() {
+    if (this.currentServer === "Player 1") {
+      this.player1Score--;
+    } else {
+      this.player2Score--;
+    }
+    this.checkWin();
+  }
+
   // Method to switch server
   switchServer() {
     this.currentServer =
