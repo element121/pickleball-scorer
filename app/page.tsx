@@ -61,8 +61,6 @@ export default function Home() {
         >
           Reset Game - are you sure?
         </button>
-
-        <p>Show final score... Player 1 won 11-0</p>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <p>version v0.0.1</p>
