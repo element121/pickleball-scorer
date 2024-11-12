@@ -60,6 +60,7 @@ export class PickleballGame {
     this.player1Score = 0;
     this.player2Score = 0;
     this.currentServer = "Player 1";
+    this.result = "";
   }
 
   // Method to get the current score

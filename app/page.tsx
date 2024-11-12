@@ -21,6 +21,7 @@ export default function Home() {
   const handleResetGame = () => {
     game.resetGame();
     setScore(game.getScore());
+    setResult(game.getResults());
   };
 
   const handleSwitchServer = () => {
