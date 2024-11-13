@@ -33,9 +33,14 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <h1>Play Pickleball</h1>
-        <p>Current Server: {game.currentServer}</p>
-        <p>Player 1: {score[0].player1Score}</p>
-        <p>Player 2: {score[0].player2Score}</p>
+        <p>
+          Player 1{game.currentServer === "Player 1" ? "*" : ""}:{" "}
+          {score[0].player1Score}
+        </p>
+        <p>
+          Player 2{game.currentServer === "Player 2" ? "*" : ""}:{" "}
+          {score[0].player2Score}
+        </p>
         <p>{result}</p>
         <button
           onClick={handleScorePoint}
