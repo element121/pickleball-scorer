@@ -24,9 +24,9 @@ export class PickleballGame {
 
   // Undo point / play a let
   resetPoint() {
-    if (this.currentServer === "Player 1") {
+    if (this.currentServer === "Player 1" && this.player1Score > 0) {
       this.player1Score--;
-    } else {
+    } else if (this.currentServer === "Player 2" && this.player2Score > 0) {
       this.player2Score--;
     }
     this.checkWin();
