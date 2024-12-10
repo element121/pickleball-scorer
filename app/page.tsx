@@ -56,7 +56,7 @@ const PickleballScorer = () => {
   return (
     <div className="flex items-center justify-center">
       <div className="flex flex-col gap-8 items-center sm:items-start">
-        <div className="flex space-x-4">
+        <div className="flex space-x-2">
           <Button
             onClick={handleScorePoint}
             className="bg-green-500 hover:bg-green-600"
