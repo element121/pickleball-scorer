@@ -2,6 +2,8 @@
 export class PickleballGame {
   player1Score: number;
   player2Score: number;
+  winningScore: number;
+  winningScoreDifference: number;
   currentServer: string;
   result: string;
 
@@ -10,6 +12,8 @@ export class PickleballGame {
     this.player2Score = 0;
     this.currentServer = "Player 1"; // Can be either "Player 1" or "Player 2"
     this.result = "";
+    this.winningScore = 11; // TODO pass this in as a parameter
+    this.winningScoreDifference = 2; // TODO pass this in as a parameter
   }
 
   // Method to score a point for the current server
@@ -44,15 +48,26 @@ export class PickleballGame {
 
   // Method to check if there's a winner
   private checkWin() {
-    if (this.player1Score >= 11 && this.player1Score - this.player2Score >= 2) {
-      // TODO display message and dispay a reset button and log score to a UI element
+    if (this.isPlayer1Winner()) {
+      // TODO display message and display a reset button and log score to a UI element
       this.result = "Player 1 wins!";
-    } else if (
-      this.player2Score >= 11 &&
-      this.player2Score - this.player1Score >= 2
-    ) {
+    } else if (this.isPlayer2Winner()) {
       this.result = "Player 2 wins!";
     }
+  }
+
+  private isPlayer1Winner(): boolean {
+    return (
+      this.player1Score >= this.winningScore &&
+      this.player1Score - this.player2Score >= this.winningScoreDifference
+    );
+  }
+
+  private isPlayer2Winner(): boolean {
+    return (
+      this.player2Score >= this.winningScore &&
+      this.player2Score - this.player1Score >= this.winningScoreDifference
+    );
   }
 
   // Method to reset the game
