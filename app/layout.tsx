@@ -26,9 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <header className="bg-gray-800 text-white p-4">
+          <h1 className="text-center text-2xl">Pickleball Scorer</h1>
+        </header>
+        <main className="flex-grow p-8">{children}</main>
+        <footer className="bg-gray-800 text-white p-4 text-center">
+          <p>version v0.0.1</p>
+        </footer>
       </body>
     </html>
   );
